@@ -21,6 +21,8 @@ then all other required added inside makefile and perform make all
 
 Makefile
 # fraud-detection Makefile
+# vi Makefile
+
 .PHONY: setup data train test clean all
 
 setup:

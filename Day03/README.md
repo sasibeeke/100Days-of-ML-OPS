@@ -17,6 +17,7 @@ The resulting requirements.txt must pin each of the four top-level packages to a
 => first check the version of uv
    # uv --version
    Then do the change in requirements.in accroding to requirement
+   # vi requirements.in 
     # Fraud detection project dependencies
     scikit-learn
     mlflow
