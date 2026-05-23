@@ -3,7 +3,7 @@ A colleague has started a new ML project at /root/code/fraud-detection/, but the
 Inspect the existing project at /root/code/fraud-detection/.
 
 The final layout must match the tree below exactly:
-
+```bash
 fraud-detection/
 ├── data/
 │   ├── raw/
@@ -19,6 +19,7 @@ fraud-detection/
 ├── configs/
 ├── requirements.txt
 └── README.md
+```
 
 Every subdirectory under src/ must contain an __init__.py file so that Python recognises it as a package.
 
