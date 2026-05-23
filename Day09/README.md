@@ -22,20 +22,23 @@ Directories: data/, models/, src/, and tests/
 Review the existing template in the VS Code explorer and correct everything that prevents it from rendering.
 
 Once the template renders, generate a project at /root/code/churn-model/:
-
+   ```bash
    cookiecutter /root/code/mlops-template/ -o /root/code/ --no-input project_name=churn-model ml_framework=sklearn
+   ```
 
 The generated project must contain a requirements.txt listing scikit-learn and a README.md that mentions xFusionCorp.
 => previous cookiecutter.json file.
 # cat  cookiecutter.json
+```cookie
 {
     "project_name": "my-ml-project",
     "author": "xFusionCorp",
     "python_version": "3.11"
 }
-
+```
 corrected cookiecutter.json
 # vi cookiecutter.json
+```json
 {
     "project_name": "my-ml-project",
     "author": "xFusionCorp",
@@ -46,10 +49,11 @@ corrected cookiecutter.json
  "tensorflow"
  ]
 }
-
+```
 
 corrected requirements.txt
 # cat requirements.txt
+```req
 {% if cookiecutter.ml_framework == 'sklearn' %}
 scikit-learn
 {% elif cookiecutter.ml_framework == 'pytorch' %}
@@ -57,13 +61,15 @@ torch
 {% elif cookiecutter.ml_framework == 'tensorflow' %}
 tensorflow
 {% endif %}
+```
 
 corrected README.md
 # cat README.md
-
+```md
 # {{cookiecutter.project_name}}
 
 Created by {{ cookiecutter.author }}.
+```
 
 Last generate a project by running following command
 # cookiecutter /root/code/mlops-template/ -o /root/code/ --no-input project_name=churn-model ml_framework=sklearn
