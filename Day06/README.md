@@ -52,6 +52,7 @@ Run this command from the project directory
 Gives issue os imported but not used. so fix with following command
 
 # ruff check src/ --fix
-```
+
 # ruff check src/
 # black --check src/
+```
