@@ -12,6 +12,7 @@ Stage the new .dvc pointer and the new .gitignore, then record a Git commit with
 Once tracking is moved to DVC, the DVC TRACKED section in the EXPLORER panel will list the dataset, confirming the extension recognises it as a DVC-managed file.
 
 => Go to the project directory 
+```bash 
 # cd /root/code/fraud-detection
 To removed file from git tracking 
 # git rm --cached data/raw/transactions.csv
@@ -26,5 +27,5 @@ Stage the .dvc pointer and the new .gitignore
 
 Commit with message 
 # git commit -m "Track transactions dataset with DVC"
-
+```
 DVC TRACKED bottom section in the explorer panel you will see the list of dataset.
