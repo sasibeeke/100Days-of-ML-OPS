@@ -19,7 +19,9 @@ Start JupyterLab from the virtual environment using the corrected configuration:
    # source /root/code/ml-env/bin/activate 
    ```
    Then Change the jupyter_lab_config.py according to requirement
+   ```ds
    # vi /root/code/jupyter_lab_config.py
+   ```
     c.ServerApp.ip = '0.0.0.0'
     c.ServerApp.port = 8888
     c.ServerApp.root_dir = '/root/notebooks/'
