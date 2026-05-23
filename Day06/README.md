@@ -12,7 +12,9 @@ Running black --check src/ from the project directory exits with status 0.
 Review the existing configuration and source files, and correct everything that prevents the two commands above from exiting cleanly.
 
 ruff, black, and mypy are already installed.
-=> previous pyproject.yml
+=> previous pyproject.yml file
+# cat pyproject.yml
+
 [project]
 name = "fraud-detection"
 version = "0.1.0"
@@ -39,6 +41,7 @@ line-length = 120
 [tool.ruff.lint]
 select = ["E", "F", "W", "I"]
 
+Run this command from the project directory
 # ruff check src/
 
 Gives issue os imported but not used. so fix with following command
