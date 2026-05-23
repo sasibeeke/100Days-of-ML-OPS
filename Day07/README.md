@@ -20,8 +20,8 @@ Build the package from the project directory:
 The build must produce a wheel named fraud_detection-0.1.0-*.whl under dist/.
 The build package is already installed. Use python3 rather than python.
 
-=> 
-# vi pyproject.toml
+=> previous pyproject.toml file
+# cat pyproject.toml
 
 [project]name = "fraud-detection"
 version = "0.0.1"
@@ -32,7 +32,8 @@ dependencies = []
 [tool.setuptools.packages.find]
 where = ["src"]
 
-vi pyproject.toml
+corrected pyproject.toml file
+# vi pyproject.toml
 [build-system]
 requires = ["setuptools>=61.0", "wheel"]
 build-backend = "setuptools.build_meta"
@@ -47,5 +48,6 @@ dependencies = ["scikit-learn","pandas","numpy"]
 [tool.setuptools.packages.find]
 where = ["src"]
 
+At last build the packafe from project direcotry
 # cd fraud-detection 
 # python3 -m build
