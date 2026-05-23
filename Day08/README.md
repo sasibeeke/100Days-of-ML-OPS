@@ -12,13 +12,14 @@ Every repository entry in the configuration must include a rev: field.
 Review the existing .pre-commit-config.yaml and correct everything that prevents the hooks above from running.
 
 Once the configuration is correct, register the hooks with git and run them against the tracked files:
-
+   ```bash 
    pre-commit install
    pre-commit run --all-files
-
+   ```
 Tip: pre-commit autoupdate queries each referenced repository and rewrites the rev: pins to the latest released tag. This is the standard way to discover current versions without looking them up by hand.
 => Given .pre-commit-config.yaml file
 # vi  .pre-commit-config.yaml
+```config
 
 repos:
   - repo: https://github.com/pre-commit/pre-commit-hooks
@@ -36,18 +37,24 @@ repos:
   - repo: https://github.com/psf/black-pre-commit-mirror
     hooks:
       - id: black
+```
 
-after running gives issue of version error
+After running gives issue of version error
+```bash
 # pre-commit install
 # pre-commit run --all-files
-
-so for this do this 
-# pre-commit autoupdate 
+```
+so for this do this
+```upd 
+# pre-commit autoupdate
+``` 
 and then run 
+```inst
 # pre-commit install
 # pre-commit run --all-files
-
+```
 # cat  .pre-commit-config.yaml
+```corr
 repos:
   - repo: https://github.com/pre-commit/pre-commit-hooks
     rev: v6.0.0
@@ -65,3 +72,4 @@ repos:
     rev: 26.5.1
     hooks:
       - id: black
+```
