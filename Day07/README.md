@@ -23,30 +23,30 @@ The build package is already installed. Use python3 rather than python.
 => previous pyproject.toml file
 # cat pyproject.toml
 
-[project]name = "fraud-detection"
-version = "0.0.1"
-description = "Fraud detection model for xFusionCorp Industries"
-requires-python = ">=3.8"
-dependencies = []
+ [project]name = "fraud-detection"
+ version = "0.0.1"
+ description = "Fraud detection model for xFusionCorp Industries"
+ requires-python = ">=3.8"
+ dependencies = []
 
-[tool.setuptools.packages.find]
-where = ["src"]
+ [tool.setuptools.packages.find]
+ where = ["src"]
 
 corrected pyproject.toml file
 # vi pyproject.toml
-[build-system]
-requires = ["setuptools>=61.0", "wheel"]
-build-backend = "setuptools.build_meta"
+ [build-system]
+ requires = ["setuptools>=61.0", "wheel"]
+ build-backend = "setuptools.build_meta"
 
-[project]
-name = "fraud_detection"
-version = "0.1.0"
-description = "Fraud detection model for xFusionCorp Industries"
-requires-python = ">=3.10"
-dependencies = ["scikit-learn","pandas","numpy"]
+ [project]
+ name = "fraud_detection"
+ version = "0.1.0"
+ description = "Fraud detection model for xFusionCorp Industries"
+ requires-python = ">=3.10"
+ dependencies = ["scikit-learn","pandas","numpy"]
 
-[tool.setuptools.packages.find]
-where = ["src"]
+ [tool.setuptools.packages.find]
+ where = ["src"]
 
 At last build the packafe from project direcotry
 # cd fraud-detection 
