@@ -17,12 +17,13 @@ After your changes, make all must complete without error.
 Makefile recipes must be indented with a real tab character, not spaces. Make rejects any recipe that is not tab-indented.
 
 => When i do make all the it gives issue of indentation 
-then all other required added inside makefile and perform make all
-
-Makefile
+then all other required added inside makefile and perform 
+```bash
+# make all Makefile
 # fraud-detection Makefile
+```
 # vi Makefile
-
+```mak
     .PHONY: setup data train test clean all
 
     setup:
@@ -42,6 +43,8 @@ Makefile
     rm -rf .pytest_cache
     rm -rf models/*
     all: setup data train 
-
+```
 After this Run the following  
-# make all 
+```cms
+# make all
+``` 
