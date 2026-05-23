@@ -15,7 +15,9 @@ From the project directory, compile the corrected specification into a pinned lo
 The resulting requirements.txt must pin each of the four top-level packages to an exact version using ==, and must also include the transitive dependencies that uv resolved.
 
 => first check the version of uv
+   ```bash 
    # uv --version
+   ```
    Then do the change in requirements.in accroding to requirement
    # vi requirements.in 
     # Fraud detection project dependencies
@@ -23,6 +25,8 @@ The resulting requirements.txt must pin each of the four top-level packages to a
     mlflow
     pandas
     numpy
-   After this perform the following command 
+   After this perform the following command
+   ```test 
    # uv pip compile requirements.in -o requirements.txt
+   ```
    after this it gives requirements.txt with exact match versions of packages with transitive dependencies.  
