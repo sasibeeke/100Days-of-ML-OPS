@@ -21,7 +21,8 @@ The build must produce a wheel named fraud_detection-0.1.0-*.whl under dist/.
 The build package is already installed. Use python3 rather than python.
 
 => previous pyproject.toml file
-# cat pyproject.toml
+  ```bash
+  # cat pyproject.toml
 
   [project]name = "fraud-detection"
   version = "0.0.1"
@@ -31,11 +32,13 @@ The build package is already installed. Use python3 rather than python.
 
   [tool.setuptools.packages.find]
   where = ["src"]
+  ```
 
 corrected pyproject.toml file
 
 # vi pyproject.toml
- 
+
+   ```toml
   [build-system]
   requires = ["setuptools>=61.0", "wheel"]
   build-backend = "setuptools.build_meta"
@@ -49,7 +52,10 @@ corrected pyproject.toml file
 
   [tool.setuptools.packages.find]
   where = ["src"]
+  ```
 
 At last build the packafe from project direcotry
+```bash
 # cd fraud-detection 
 # python3 -m build
+```
