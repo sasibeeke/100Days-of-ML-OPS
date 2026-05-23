@@ -15,13 +15,19 @@ Start JupyterLab from the virtual environment using the corrected configuration:
    jupyter lab --config=/root/code/jupyter_lab_config.py --allow-root 
 
 => first activate given virtual environment.
+   ```bash
    # source /root/code/ml-env/bin/activate 
+   ```
    Then Change the jupyter_lab_config.py according to requirement
    # vi /root/code/jupyter_lab_config.py
     c.ServerApp.ip = '0.0.0.0'
     c.ServerApp.port = 8888
     c.ServerApp.root_dir = '/root/notebooks/'
    Then After that we need to create a directory which is not present at /root/notebooks
+   ```test 
    # mkdir -p /root/notebooks/
+   ```
    To perform taks working fine run the following command and hit the button to check jupyter lab open or not.
-   # jupyter lab --config=/root/code/jupyter_lab_config.py --allow-root 
+   ```pes
+   # jupyter lab --config=/root/code/jupyter_lab_config.py --allow-root
+   ```
