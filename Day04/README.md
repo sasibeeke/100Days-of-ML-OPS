@@ -28,7 +28,8 @@ README.md must begin with the heading # fraud-detection.
 
 Review the existing project and correct everything that does not match the requirements above.
 
-=> Go tho the directory 
+=> Go tho the directory
+   ```bash 
    # cd fraud-detection/
    Then run the following commands 
    # sudo apt update 
@@ -40,6 +41,7 @@ Review the existing project and correct everything that does not match the requi
    features and utils already exist but with with spells like feature and util so i rename both
    # mv src/feature src/features
    # mv src/util src/utils
+   ```
    matches packages or correct package list in requirement.txt 
    # vi requirement.txt and change
     #sklearn
@@ -53,5 +55,6 @@ Review the existing project and correct everything that does not match the requi
     ML project for fraud detection at xFusionCorp Industries.
 
    review the project by using tree command
+   ```test
    # tree fraud-detection/
-   
+   ```
