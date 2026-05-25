@@ -24,7 +24,7 @@ Push the tracked data. After the push, the dvc-storage bucket in the SeaweedFS F
 ```
 
 modify this ['remote "s3"']
-``test
+```test
     url = s3://dvc-storage
     endpointurl = http://localhost:8333
     access_key_id = weedadmin
@@ -32,14 +32,14 @@ modify this ['remote "s3"']
 ```
 and then do,it automatically add 
 
-``t
+```t
 # dvc remote default s3
 
 [core]
     remote = s3 inside config
 ```
 final .dvc/config
-``y
+```y
 [core]
    remote = s3
 ['remote "s3"']
