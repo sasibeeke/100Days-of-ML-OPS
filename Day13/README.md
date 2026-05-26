@@ -3,23 +3,25 @@ A new xFusionCorp Industries team member has cloned the fraud-detection reposito
 
 A cloned project exists at /root/code/fraud-detection/ with DVC initialised, the data/raw/transactions.csv.dvc pointer file present, but the dataset itself missing from disk and from the local DVC cache.
 
-SeaweedFS is already running on the controlplane and the dataset has already been pushed to the dvc-storage bucket—open the SeaweedFS Filer button at the top of the lab and navigate to /buckets/dvc-storage/ to confirm that the object is there.
-
+SeaweedFS is already running on the controlplane and the dataset has already been pushed to the dvc-storage bucket—open the SeaweedFS Filer button at the top of the lab and navigate to /buckets/dvc-storage/ to confirm that the object is there.'<br>'
+```ty
 S3 endpoint: http://localhost:8333
 Credentials: weedadmin / weedadmin123
+```
 Review .dvc/config and correct everything that prevents dvc pull from authenticating against SeaweedFS.
 
 After the fix, the s3 remote must use:
 The access key (access_key_id) weedadmin
 The secret key (secret_access_key) weedadmin123.
-Pull the dataset. After the pull, data/raw/transactions.csv must be present on disk and its content must match the hash recorded in the .dvc pointer.
+Pull the dataset. After the pull, data/raw/transactions.csv must be present on disk and its content must match the hash recorded in the .dvc pointer.'<br>'
 => when i do **dvc pull** it gives issue 
 # dvc pull
+```sv
 Collecting                                      |1.00 [00:00,  712entry/s]
 ERROR: failed to connect to s3 (dvc-storage/files/md5) - Unable to locate credentials
 Fetching
 ERROR: failed to pull data from the cloud - 1 files failed to download
-
+```
 previous .dvc/config
 ```bash
 [core]
