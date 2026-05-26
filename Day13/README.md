@@ -10,9 +10,9 @@ Credentials: weedadmin / weedadmin123
 ```
 Review .dvc/config and correct everything that prevents dvc pull from authenticating against SeaweedFS.
 
-After the fix, the s3 remote must use:
-The access key (access_key_id) weedadmin
-The secret key (secret_access_key) weedadmin123.
+After the fix, the s3 remote must use:<br>
+The access key (access_key_id) weedadmin<br>
+The secret key (secret_access_key) weedadmin123.<br>
 Pull the dataset. After the pull, data/raw/transactions.csv must be present on disk and its content must match the hash recorded in the .dvc pointer.<br>
 => when i do dvc pull it gives issue 
 ```sv
