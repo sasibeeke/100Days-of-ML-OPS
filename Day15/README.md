@@ -16,7 +16,7 @@ Correct the parameter wiring and demonstrate that DVC re-runs the train stage wh
 The DVC extension's PARAMS section under the DVC view will surface the values from params.yaml directly in the editor.<br>
 =>  cat  params.yaml
 ```bash
-    n_estimator: 100
+n_estimator: 100
 ```
 correected params.yaml
 ```co
