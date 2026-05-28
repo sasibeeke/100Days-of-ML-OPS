@@ -74,5 +74,3 @@ to validate model.pkl when generated do
 ```we
 # ls -l models/model.pkl
 ```
-    outs:
-      - models/model.pkl
