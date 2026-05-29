@@ -85,5 +85,5 @@ dvc metrics show
 you will see it is tracked by git instead of dvc cache<br>
 Key point:<br>
 metrics.json must be under metrics:<br>
-cache: false ensures it stays tracked in Git instead of the DVC cache<br>
+cache: false ensures metrics.json stays tracked in Git instead of the DVC cache<br>
 models/model.pkl should remain under outs:<br>
