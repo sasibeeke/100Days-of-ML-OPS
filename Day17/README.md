@@ -12,8 +12,8 @@ Run three experiments that vary the n_estimators hyperparameter, identify the be
 
 4) Apply the chosen experiment to the workspace so its n_estimators, metrics.json, and models/model.pkl become the tracked state.<br>
 
-  The DVC extension's EXPERIMENTS section under the DVC view lists every experiment alongside its parameters and metrics, supports running fresh experiments <br>
-  through the + action, and applies a selected experiment to the workspace from the right-click menu—every operation in this lab can be performed either through <br>
+  The DVC extension's EXPERIMENTS section under the DVC view lists every experiment alongside its parameters and metrics, supports running fresh experiments
+  through the + action, and applies a selected experiment to the workspace from the right-click menu—every operation in this lab can be performed either through
   the extension UI or with the equivalent dvc exp commands.<br>
   =>  I have apply values thorugh cmd . Run experiments with different n_estimators values.<br>
 ```bash
@@ -30,8 +30,8 @@ Identify the experiment with the highest f1_score in my case this is experiemnt 
 # dvc exp apply exp-d4e5f6
 ```
 This updates:<br>
-params.yaml
-metrics.json
+params.yaml<br>
+metrics.json<br>
 models/model.pkl  to match the selected experiment.<br>
 
 Verify workspace<br>
