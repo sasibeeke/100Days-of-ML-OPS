@@ -56,7 +56,7 @@ Preprocessed: 20 clean rows
 ERROR: failed to reproduce 'preprocess': output 'data/processed/cleaned.csv' does not exist
 
 corrected dvc.yaml
-
+```bash
 stages:
   ingest:
     cmd: python scripts/ingest.py
@@ -107,11 +107,14 @@ stages:
     outs:
       - reports/evaluation.json:
           cache: false 
-          
+```
+Copy the staged scripts
+```ax
 cp scripts-staging/train.py scripts/
 cp scripts-staging/evaluate.py scripts/   
-
+```
 added this two stages 
+```rf
 train:
     cmd: python scripts/train.py
     deps:
@@ -137,7 +140,8 @@ train:
       - data/processed/test_split.csv
     outs:
       - reports/evaluation.json:
-          cache: false 
+          cache: false
+```
 To rerun pipeline do 
 ```re
 # dvc repro
