@@ -40,7 +40,7 @@ Start MLflow tracking server in background <br>
 Verify that it started:<br>
 ```ts
 # ps -ef | grep mlflow
-``
+```
 Verify the database file exists:<br>
 ```sq
 # ls -l /root/code/mlflow-backend/mlflow.db
