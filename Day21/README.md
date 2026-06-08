@@ -18,7 +18,7 @@ The end state must include:<br>
 3) Both advertised scores (accuracy, f1_score) recorded as run metrics.<br>
 4) The sklearn model captured as an MLflow model artefact on the run.<br>
 The result can be confirmed in the MLflow UI—once the run is opened, the Parameters, Metrics, and Artifacts panels each show the expected content.<br>
-=> Cottected log_experiment.py
+=> Corrected log_experiment.py
 ```bash
 """
 MLflow experiment logging — three TODO blocks below record a training
