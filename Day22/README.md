@@ -55,8 +55,8 @@ Repeat the same steps:<br>
 1) Open churn-prediction<br>
 2) Go to Tags<br>
 3) Add:<br>
-  * Key: team<br>
-  * Value: analytics<br>
+     * Key: team<br>
+     * Value: analytics<br>
 4) Save.<br>
 
 (Description is not explicitly required for this one in the task, so you can leave it blank unless the UI forces it—in that case add any short <br>
