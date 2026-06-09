@@ -35,7 +35,7 @@ Open the MLflow tracking server UI (port 5000) using the lab’s MLflow UI butto
 1) Open the newly created fraud-detection experiment.<br>
 2) Go to Overview / Settings / Edit (gear icon or “Edit Experiment”).<br>
 3) Add:<br>
-       * Description: something like Fraud detection ML experiment for transaction anomaly classification<br>
+      * Description: something like Fraud detection ML experiment for transaction anomaly classification<br>
 4) Save.<br>
 
 **Add Tag<br>**
