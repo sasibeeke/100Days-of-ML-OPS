@@ -15,7 +15,7 @@ and flag every clearly under-performing run for removal.<br>
 
 3) The other runs (those in the 0.75 ≤ f1 ≤ 0.85 band, and the second-best shortlisting candidate) must carry no review-status tag at all.<br>
 
-=> To complete this lab in the MLflow UI:
+=> To complete this lab in the MLflow UI:<br>
      1) Open the MLflow UI (http://localhost:5000) and select the fraud-detection experiment.
      2) Sort the runs by f1_score (descending).
      3) Identify:
