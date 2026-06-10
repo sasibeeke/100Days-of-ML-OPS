@@ -19,8 +19,8 @@ and flag every clearly under-performing run for removal.<br>
      1) Open the MLflow UI (http://localhost:5000) and select the fraud-detection experiment.<br>
      2) Sort the runs by f1_score (descending).<br>
      3) Identify:
-           * The single run with the highest f1_score among all runs where f1_score > 0.85.<br>
-           * All runs where f1_score < 0.75.<br>
+           * The single run with the highest f1_score among all runs where f1_score > 0.85.
+           * All runs where f1_score < 0.75.
           
 **Add the shortlisted tag**
 
