@@ -2,18 +2,19 @@ The xFusionCorp Industries ML team wants to replace the manual log_param / log_m
 autologging feature, so every training run captures its constructor parameters, training metrics, and model artefact automatically. <br>
 A training scaffold has been pre-staged at /root/code/autolog_experiment.py—it configures MLflow, fits a small synthetic sklearn model, and prints
 a confirmation message. Two # TODO blocks remain empty. Your task is to complete them so the end state below holds.<br>
-The MLflow tracking server is already running on port 5000. The MLflow UI button at the top of the lab can be opened to view the dashboard; <br>
+
+1) The MLflow tracking server is already running on port 5000. The MLflow UI button at the top of the lab can be opened to view the dashboard; <br>
 only the Default experiment is present on first load.<br>
 
-Open /root/code/autolog_experiment.py in the VS Code editor and complete the two TODO blocks—both are one-line additions—so that, <br>
+2) Open /root/code/autolog_experiment.py in the VS Code editor and complete the two TODO blocks—both are one-line additions—so that, <br>
 after the script is executed, the following end state holds:<br>
-
-An experiment named autolog-demo exists on the MLflow server.<br>
-At least one run exists in the autolog-demo experiment.<br>
-The run's Parameters panel lists every sklearn constructor parameter that the LogisticRegression in the scaffold implicitly carries<br> 
+  * An experiment named autolog-demo exists on the MLflow server.<br>
+  * At least one run exists in the autolog-demo experiment.<br>
+  * The run's Parameters panel lists every sklearn constructor parameter that the LogisticRegression in the scaffold implicitly carries<br> 
 (for example C, max_iter, solver, tol, penalty) – Not only the three explicit keyword arguments the scaffold passes.<br>
-The Artifacts panel on the run contains a model directory with an MLmodel descriptor and a pickled estimator.<br>
-Once the TODOs are in place, execute the script:<br>
+  * The Artifacts panel on the run contains a model directory with an MLmodel descriptor and a pickled estimator.<br>
+
+3) Once the TODOs are in place, execute the script:<br>
   ```te
    python3 /root/code/autolog_experiment.py
 ```
