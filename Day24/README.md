@@ -77,15 +77,15 @@ Verify in the MLflow UI:
   2) A run appears under that experiment.
   3) Parameters include all LogisticRegression constructor parameters (not just the explicitly supplied ones), 
   such as:
-    * C
-    * max_iter
-    * solver
-    * penalty
-    * tol
-    * fit_intercept
-    * class_weight
-    * etc.
+      * C
+      * max_iter
+      * solver
+      * penalty
+      * tol
+      * fit_intercept
+      * class_weight
+      * etc.
 4) Artifacts contain a model folder with:
-    * MLmodel
-    * pickled model (model.pkl or equivalent)
-    * environment files
+      * MLmodel
+      * pickled model (model.pkl or equivalent)
+      * environment files
