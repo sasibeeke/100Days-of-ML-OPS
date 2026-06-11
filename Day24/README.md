@@ -1,6 +1,6 @@
 The xFusionCorp Industries ML team wants to replace the manual log_param / log_metric boilerplate in their training scripts with MLflow's <br>
 autologging feature, so every training run captures its constructor parameters, training metrics, and model artefact automatically. <br>
-A training scaffold has been pre-staged at /root/code/autolog_experiment.py—it configures MLflow, fits a small synthetic sklearn model, and prints<br>
+A training scaffold has been pre-staged at /root/code/autolog_experiment.py—it configures MLflow, fits a small synthetic sklearn model, and prints
 a confirmation message. Two # TODO blocks remain empty. Your task is to complete them so the end state below holds.<br>
 The MLflow tracking server is already running on port 5000. The MLflow UI button at the top of the lab can be opened to view the dashboard; <br>
 only the Default experiment is present on first load.<br>
