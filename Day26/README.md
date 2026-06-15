@@ -11,9 +11,10 @@ Your task is to review the candidates side by side in the MLflow UI and explicit
       *  Neither of the other two runs may carry a production-candidate tag.<br>
 The result can be confirmed in the MLflow UI: the model-comparison experiment lists three runs, and only the top-f1_score run shows
 the production-candidate tag on its detail page.<br>
-=> This task is done entirely in the MLflow UI.<br>
+=> 
+This task is done entirely in the MLflow UI.<br>
 **Steps**
-    1) Open the MLflow UI:
+    1) Open the MLflow UI:<br>
           http://localhost:5000
     2) Open the model-comparison experiment.
     3) In the runs table, compare the three runs:
