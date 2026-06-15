@@ -9,7 +9,7 @@ Your task is to review the candidates side by side in the MLflow UI and explicit
 2) Using the MLflow UI, inspect the three runs side by side and identify the winner by metrics.f1_score.<br>
       *  The run with the highest f1_score must carry a run-level tag: key production-candidate, value true.<br>
       *  Neither of the other two runs may carry a production-candidate tag.<br>
-The result can be confirmed in the MLflow UI: the model-comparison experiment lists three runs, and only the top-f1_score run shows<br>
+The result can be confirmed in the MLflow UI: the model-comparison experiment lists three runs, and only the top-f1_score run shows
 the production-candidate tag on its detail page.<br>
 => This task is done entirely in the MLflow UI.<br>
 **Steps**
