@@ -14,7 +14,7 @@ the production-candidate tag on its detail page.<br>
 => This task is done entirely in the MLflow UI.<br>
 **Steps**
     1) Open the MLflow UI:
-      http://localhost:5000
+          http://localhost:5000
     2) Open the model-comparison experiment.
     3) In the runs table, compare the three runs:
          * RandomForest
