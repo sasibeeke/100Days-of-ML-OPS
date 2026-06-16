@@ -20,8 +20,8 @@ Your task is to complete the MLflow-side plumbing that loads the champion and ru
 The end state must include:
   * A file at /root/code/predictions.csv with a header row.
   * A prediction column in that CSV.
-  * The number of prediction rows equal to the number of input rows in /root/code/data/inputs.csv (ten).
-=>
+  * The number of prediction rows equal to the number of input rows in /root/code/data/inputs.csv (ten).<br>
+=><br>
 Corrected predict_with_preprocessing.py
 ```bash 
 """
