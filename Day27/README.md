@@ -95,7 +95,7 @@ Then run:
 ```test
 python3 /root/code/predict_with_preprocessing.py
 ```
-You will see file created at /root/code/predictions.csv
-A prediction column in the header
-10 prediction rows (11 lines total including the header)
+* You will see file created at /root/code/predictions.csv
+* A prediction column in the header
+* 10 prediction rows (11 lines total including the header)
 
