@@ -3,7 +3,7 @@ run invocation. A project has been pre-staged at /root/code/trainer/, but the fi
 carries a subtle command-line bug. Your task is to fix the bug and then run the project end to end twice so successful runs are recorded.<br>
 
 
-1) The MLflow tracking server is already running on port 5000. The MLflow UI button at the top of the lab can be opened to view the dashboard;<br> 
+1) The MLflow tracking server is already running on port 5000. The MLflow UI button at the top of the lab can be opened to view <br> the dashboard; 
 the trainer experiment already contains a FAILED run from the automated run that the lab startup triggered against the broken project.<br>
 
 2) /root/code/trainer/ contains:<br>
