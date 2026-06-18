@@ -17,8 +17,8 @@ one round trip lands metadata in PostgreSQL and the model artefact in SeaweedFS.
    python3 /root/code/log_test_run.py
    ```
    
-The MLflow run appears in the MLflow UI (the metadata write to PostgreSQL succeeds), but the model artefact upload step raises an error because<br>
-the MLflow server cannot reach the SeaweedFS bucket. The SeaweedFS Filer confirms /buckets/mlflow-artifacts/ is still empty.<br>
+The MLflow run appears in the MLflow UI (the metadata write to PostgreSQL succeeds), but the model artefact upload step raises an error 
+because the MLflow server cannot reach the SeaweedFS bucket. The SeaweedFS Filer confirms /buckets/mlflow-artifacts/ is still empty.<br>
 
 3) Inspect /root/code/start-mlflow.sh and reconcile its environment with the SeaweedFS endpoint. Save the file, then restart the MLflow server:<br>
    ```test
