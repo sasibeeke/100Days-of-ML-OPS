@@ -75,9 +75,11 @@ After that run again the smoke test<br>
  I verified using:<br>
    1) test-remote experiment exist on mlflow server experiment section.
    2) then in SeaweedFS section check the mlflow-artifacts have artifacts MLmodel + model.pkl under /buckets/mlflow-artifacts/
-   3) check the mlflow database holds the mlflow schema by using 
+   3) check the mlflow database holds the mlflow schema by using<br>
+      ```ps
        docker exec mlflow-db psql -U mlflow -d mlflow
         \dt
         SELECT * FROM experiments;
         SELECT * FROM runs;
         \q   
+      ```
