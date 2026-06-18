@@ -6,10 +6,10 @@ one round trip lands metadata in PostgreSQL and the model artefact in SeaweedFS.
 
 1) The pre-staged state:<br>
 
-  * PostgreSQL container mlflow-db is running on port 5432 (database mlflow, credentials mlflow / mlflow123).
-  * SeaweedFS is running on port 8333 (S3 API) / 8888 (Filer UI), credentials weedadmin / weedadmin123, with a pre-created bucket mlflow-artifacts.
-  * MLflow tracking server is running on port 5000 and was launched by /root/code/start-mlflow.sh. Its log is at /tmp/mlflow.log.
-  * Reference scripts: /root/code/start-mlflow.sh (the MLflow startup command), /root/code/restart-mlflow.sh (kills the running server and
+   * PostgreSQL container mlflow-db is running on port 5432 (database mlflow, credentials mlflow / mlflow123).
+   * SeaweedFS is running on port 8333 (S3 API) / 8888 (Filer UI), credentials weedadmin / weedadmin123, with a pre-created bucket mlflow-artifacts.
+   * MLflow tracking server is running on port 5000 and was launched by /root/code/start-mlflow.sh. Its log is at /tmp/mlflow.log.
+   * Reference scripts: /root/code/start-mlflow.sh (the MLflow startup command), /root/code/restart-mlflow.sh (kills the running server and
      re-launches via start-mlflow.sh), and /root/code/log_test_run.py (the smoke-test that exercises one full round trip).
 
 2) Run the smoke-test once to observe the failure:<br>
