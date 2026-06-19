@@ -23,8 +23,7 @@ mlflow models serve is long-running; start it in the background, and ensure that
 monitoring script.<br>
 => 
 Step 1: Open the MLflow UI<br>
-Open:<br>
-  http://localhost:5000
+Open: http://localhost:5000
 
 Step 2: Find the best run<br>
   1) Click Experiments.
