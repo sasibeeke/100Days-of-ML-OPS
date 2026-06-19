@@ -10,9 +10,8 @@ opened to view each web UI.<br>
 2) The complete end state requires the following.<br>
     * A registered model named fraud-detector-v2 exists in the MLflow Model Registry.
     * A champion alias on that model points at the version sourced from the fraud-detection-v2 run with the highest f1_score.
-    * An mlflow models serve process listens on port 5001, serving the champion version (--env-manager=local is the supported choice for the lab).Export<br>
-    MLFLOW_TRACKING_URI=http://localhost:5000 in the serving shell so the models:/ URI can be resolved against the tracking server. The tracking
-    server proxies the model download from SeaweedFS itself, so no S3 credentials are needed in the serving shell.
+    * An mlflow models serve process listens on port 5001, serving the champion version (--env-manager=local is the supported choice for the lab).Export MLFLOW_TRACKING_URI=http://localhost:5000 in the serving shell so the models:/ URI can be resolved against the tracking server.
+The tracking server proxies the model download from SeaweedFS itself, so no S3 credentials are needed in the serving shell.
     * The served endpoint returns 200 on GET /health.
     * A shell script at /root/code/monitor.sh exists, is executable, probes the served model's /health endpoint once, and exits with status 0 when the
     endpoint is healthy.
