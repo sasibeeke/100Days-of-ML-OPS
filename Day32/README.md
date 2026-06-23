@@ -123,10 +123,12 @@ if __name__ == "__main__":
 ```
 After this again run ./check_determinism.sh this time it executed successfully & gives OK: all three runs produced byte-identical metrics.<br>
 To determined end state <br>
-1) first i did 
-echo $?
-it return 0 as output.
-2) Check two runs which have identical values.
+1) first i did <br>
+```lo     
+     echo $?
+```
+it return 0 as output.<br>
+2) Check two runs which have identical values.<br>
 3) All three probe runs produce byte-identical metrics JSON files at reports/metrics_run_1.json, reports/metrics_run_2.json, and
-   reports/metrics_run_3.json – Covering accuracy, f1_score, and the model's feature_importances.
+   reports/metrics_run_3.json – Covering accuracy, f1_score, and the model's feature_importances.<br>
   
