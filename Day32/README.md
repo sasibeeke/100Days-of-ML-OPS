@@ -1,0 +1,132 @@
+The xFusionCorp Industries ML platform team's audit pipeline depends on run-to-run reproducibility—identical code and identical data must<br> 
+produce identical metrics. The fraud-detection trainer at /root/code/fraud-detection/src/models/train.py currently fails this guarantee:<br> 
+consecutive runs on the same dataset report different accuracy and F1 values. Your task is to make the trainer deterministic <br>
+so the check_determinism.sh probe succeeds.<br>
+
+
+1) The MLflow tracking server is already running on port 5000. The MLflow UI button at the top of the lab can be opened to confirm—the <br>
+dashboard loads with an empty fraud-detection-repro experiment.<br>
+
+2) The project layout under /root/code/fraud-detection/:
+      * data/train.csv – A pre-generated 200-row synthetic binary classification dataset. The same file is read by both runs.
+      * src/models/train.py – The trainer (non-deterministic on purpose). Every non-reproducibility concern is correctly wired; only the seed 
+discipline is missing.
+      * check_determinism.sh – Executable probe that runs the trainer three times, writes reports/metrics_run_1.json, reports/metrics_run_2.json,
+and reports/metrics_run_3.json, and diffs each adjacent pair. Exits 0 only when all three JSON files are byte-identical.
+      * models/ – Where each run persists its serialised model.
+      * reports/ – Where each run writes its metrics JSON.
+3) Running /root/code/fraud-detection/check_determinism.sh currently prints FAIL: the three runs did not produce byte-identical metrics. 
+followed by a diff. Open src/models/train.py in the VS Code editor, add the seed discipline required by scikit-learn's randomised 
+operations, save, and re-run the probe.
+
+4) The end state must include:
+      * check_determinism.sh exits with status 0.
+      * At least two runs exist in the fraud-detection-repro experiment, named repro-run-1 and repro-run-2, with identical metrics.accuracy 
+and metrics.f1_score values (to at least six decimal places).
+      * All three probe runs produce byte-identical metrics JSON files at reports/metrics_run_1.json, reports/metrics_run_2.json, 
+and reports/metrics_run_3.json – Covering accuracy, f1_score, and the model's feature_importances.
+
+Only train.py needs to change. The probe, the dataset, and the MLflow wiring are all correct and must not be modified.
+
+=> first i run ./check_determinism.sh by going to given directory path, so it gives error<br>
+```ui
+  FAIL: the three runs did not produce byte-identical metrics.
+```
+Added a constant after the existing constants in train.py<br>
+```tr
+  SEED = 42
+```  
+Add random_state=SEED in both methods i.e train_test_split,RandomForestClassifier<br>
+  
+corrected train.py<br>
+```bash
+"""Training script for the fraud-detection model.
+
+This scaffold is deliberately non-deterministic — running it twice
+produces different metrics on the same input data. A reproducibility
+fix is required so downstream tooling (checksum-based caching,
+experiment comparison, audit trails) can rely on run-to-run
+stability.
+
+Every non-reproducibility concern is already handled here — data
+loading, split, training, MLflow logging, model persistence, and
+metrics serialisation. Edit this file to add the seed discipline
+that makes the run reproducible; do not change anything else.
+"""
+import os
+import json
+import joblib
+import pandas as pd
+import mlflow
+import mlflow.sklearn
+from sklearn.ensemble import RandomForestClassifier
+from sklearn.model_selection import train_test_split
+from sklearn.metrics import accuracy_score, f1_score
+
+TRAIN_CSV = "/root/code/fraud-detection/data/train.csv"
+MODEL_PATH = "/root/code/fraud-detection/models/model.pkl"
+METRICS_OUT = os.environ.get(
+    "METRICS_OUT", "/root/code/fraud-detection/reports/last_metrics.json"
+)
+RUN_NAME = os.environ.get("MLFLOW_RUN_NAME", "repro-run")
+SEED = 42
+
+def main():
+    df = pd.read_csv(TRAIN_CSV)
+    X = df.drop(columns=["is_fraud"])
+    y = df["is_fraud"]
+
+    X_train, X_test, y_train, y_test = train_test_split(
+        X, y, test_size=0.2, stratify=y,random_state=SEED,
+    )
+
+    model = RandomForestClassifier(n_estimators=100, max_depth=5,random_state=SEED,)
+    model.fit(X_train, y_train)
+
+    preds = model.predict(X_test)
+    metrics = {
+        "accuracy": round(accuracy_score(y_test, preds), 6),
+        "f1_score": round(f1_score(y_test, preds), 6),
+    }
+
+    mlflow.set_tracking_uri("http://localhost:5000")
+    mlflow.set_experiment("fraud-detection-repro")
+    with mlflow.start_run(run_name=RUN_NAME):
+        mlflow.log_params({"n_estimators": 100, "max_depth": 5})
+        for key, value in metrics.items():
+            mlflow.log_metric(key, value)
+        os.makedirs(os.path.dirname(MODEL_PATH), exist_ok=True)
+        joblib.dump(model, MODEL_PATH)
+        mlflow.sklearn.log_model(model, name="model")
+
+    # Probe payload is a superset of `metrics` plus feature_importances.
+    # The list lives here — not in `metrics` — because MLflow's
+    # log_metric only accepts scalars. feature_importances_ is an
+    # average over 100 trees' bootstrap + feature-subset randomness;
+    # two unseeded runs can coincidentally produce the same accuracy
+    # / f1 bucket on a 40-row stratified test set, but their importance
+    # triplets essentially never match, so the probe's byte-diff can
+    # distinguish a real deterministic run from a lucky collision.
+    probe_payload = {
+        **metrics,
+        "feature_importances": model.feature_importances_.tolist(),
+    }
+    os.makedirs(os.path.dirname(METRICS_OUT), exist_ok=True)
+    with open(METRICS_OUT, "w") as f:
+        json.dump(probe_payload, f, indent=2, sort_keys=True)
+
+    print(f"{RUN_NAME}: accuracy={metrics['accuracy']}, f1_score={metrics['f1_score']}")
+
+
+if __name__ == "__main__":
+    main()
+```
+After this again run ./check_determinism.sh this time it executed successfully & gives OK: all three runs produced byte-identical metrics.<br>
+To determined end state <br>
+1) first i did 
+echo $?
+it return 0 as output.
+2) Check two runs which have identical values.
+3) All three probe runs produce byte-identical metrics JSON files at reports/metrics_run_1.json, reports/metrics_run_2.json, and
+   reports/metrics_run_3.json – Covering accuracy, f1_score, and the model's feature_importances.
+  
