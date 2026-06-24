@@ -128,10 +128,10 @@ After this ls reports these two files present inside reports directory.<br>
 
 Finally, open the MLflow UI (http://localhost:5000) and you should see:<br>
 
-Experiment: fraud-detection-eval
-  1 run
-  5 logged metrics
-  Artifacts:
-  metrics.json
+Experiment: fraud-detection-eval<br>
+  1 run<br>
+  5 logged metrics<br>
+  Artifacts:<br>
+  metrics.json<br>
   confusion_matrix.png
   
