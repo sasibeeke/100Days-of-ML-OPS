@@ -4,16 +4,16 @@ but its report does not match the release checklist and the fold strategy does n
 so the cross-validation report lands in the expected shape.<br>
 
 
-1) The MLflow tracking server is already running on port 5000. The MLflow UI button at the top of the lab can be opened to confirm—the dashboard<br>
+1) The MLflow tracking server is already running on port 5000. The MLflow UI button at the top of the lab can be opened to confirm—the dashboard
 loads with an empty fraud-detection-cv experiment.<br>
 
 2) The project layout under /root/code/fraud-detection/:<br>
       * data/train.csv – A pre-generated 200-row synthetic binary-classification dataset with an imbalanced class split (roughly 70 / 30).<br>
 Do not regenerate it.
-      * src/models/cross_validate.py – The cross-validation scaffold. Every concern other than the splitter and the aggregate schema is correctly<br>
+      * src/models/cross_validate.py – The cross-validation scaffold. Every concern other than the splitter and the aggregate schema is correctly
 wired: fold iteration, per-fold metric computation, nested MLflow runs under a parent, JSON persistence, and artefact logging.<br>
       * reports/ – Where the cross-validation report must land.
-3) Open src/models/cross_validate.py in the VS Code editor, correct the two problems that keep the report from meeting the release checklist,<br>
+3) Open src/models/cross_validate.py in the VS Code editor, correct the two problems that keep the report from meeting the release checklist,
 save, and run the script.<br>
 
 4) The end state must include:<br>
