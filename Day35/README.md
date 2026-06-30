@@ -7,10 +7,10 @@ The MLflow tracking server is already running on port 5000. The MLflow UI button
 loads with an empty hyperopt-tuning experiment.<br>
 
 The project layout under /root/code/fraud-detection/:<br>
-      * data/train.csv – The same 200-row synthetic binary-classification dataset Day 34 uses (imbalanced roughly 70 / 30).<br>
+      * data/train.csv – The same 200-row synthetic binary-classification dataset Day 34 uses (imbalanced roughly 70 / 30).
       * src/models/tune.py – The Optuna tuner scaffold. Fold iteration, metric averaging, Optuna study creation, and YAML persistence are already
     wired corrections are required.
-      * configs/ – Where best_params.yaml is written after the search completes.<br>
+      * configs/ – Where best_params.yaml is written after the search completes.
       * Open src/models/tune.py in the VS Code editor, correct every issue that keeps the search from meeting the release checklist, save, and run the script once.
 
 The end state must include:<br>
