@@ -7,18 +7,17 @@ The MLflow tracking server is already running on port 5000. The MLflow UI button
 loads with an empty hyperopt-tuning experiment.<br>
 
 The project layout under /root/code/fraud-detection/:<br>
-    * data/train.csv – The same 200-row synthetic binary-classification dataset Day 34 uses (imbalanced roughly 70 / 30).<br>
-    * src/models/tune.py – The Optuna tuner scaffold. Fold iteration, metric averaging, Optuna study creation, and YAML persistence are already
+       * data/train.csv – The same 200-row synthetic binary-classification dataset Day 34 uses (imbalanced roughly 70 / 30).<br>
+       * src/models/tune.py – The Optuna tuner scaffold. Fold iteration, metric averaging, Optuna study creation, and YAML persistence are already
     wired corrections are required.
-    * configs/ – Where best_params.yaml is written after the search completes.<br>
-    * Open src/models/tune.py in the VS Code editor, correct every issue that keeps the search from meeting the release checklist, save, and run the 
-script once.
+       * configs/ – Where best_params.yaml is written after the search completes.<br>
+       * Open src/models/tune.py in the VS Code editor, correct every issue that keeps the search from meeting the release checklist, save, and run the script once.
 
 The end state must include:<br>
-    1) At least 20 runs exist in the hyperopt-tuning experiment on MLflow. Every run carries params.n_estimators, params.max_depth, and <br> metrics.f1_score.
-    2) A YAML file at /root/code/fraud-detection/configs/best_params.yaml with exactly two keys: n_estimators (integer in the range [50, 500]) <br>
+       1) At least 20 runs exist in the hyperopt-tuning experiment on MLflow. Every run carries params.n_estimators, params.max_depth, and <br> metrics.f1_score.
+       2) A YAML file at /root/code/fraud-detection/configs/best_params.yaml with exactly two keys: n_estimators (integer in the range [50, 500]) <br>
 and max_depth (integer in the range [3, 20]).<br>
-    3) The Optuna study is directed such that best_params corresponds to the highest-F1 trial in the search space – Not the lowest.<br>
+       3) The Optuna study is directed such that best_params corresponds to the highest-F1 trial in the search space – Not the lowest.<br>
 => corrected tune.py <br>
 ```bash
 """Hyperparameter tuner for the fraud-detection RandomForest.
