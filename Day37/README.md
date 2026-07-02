@@ -3,7 +3,7 @@ evaluate—orchestrated by a single script that logs the end-to-end run to MLflo
 invariant is broken: the pipeline currently produces a feature matrix that does not reflect the upstream drop-and-clean work. Your task is to <br>
 correct the stage wiring so every stage reads from its immediate predecessor and one MLflow run captures the full pipeline.<br>
 
-1) The MLflow tracking server is already running on port 5000. The MLflow UI button at the top of the lab can be opened to confirm—the dashboard<br>
+1) The MLflow tracking server is already running on port 5000. The MLflow UI button at the top of the lab can be opened to confirm—the dashboard
 loads with an empty training-pipeline experiment.<br>
 3) The project layout under /root/code/fraud-detection/:<br>
       * data/raw/train.csv – The same 200-row synthetic binary-classification dataset the rest of the Training section uses (imbalanced roughly 70 / 30).
@@ -13,7 +13,7 @@ loads with an empty training-pipeline experiment.<br>
         (amount < 50) and duplicates before writing the processed CSV. The four stages are wired through the config's data: paths.
       * run_pipeline.py – The orchestrator that executes the four stages in order and logs one MLflow run with the config-driven parameters and
         the final evaluation metrics. Correct and requires no edits.
-4) Identify the stage whose input path breaks the chain, correct the wiring in the VS Code editor, save, and run python3 run_pipeline.py once from<br>
+4) Identify the stage whose input path breaks the chain, correct the wiring in the VS Code editor, save, and run python3 run_pipeline.py once from
    the project root.
 6) The end state must include:<br>
       * The row count of data/features/features.csv equals the row count of data/processed/train_clean.csv and is strictly less than the 200-row raw CSV.
