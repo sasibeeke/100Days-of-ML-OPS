@@ -1,17 +1,15 @@
-The xFusionCorp Industries ML platform team is conducting a parallel-training bake-off for the fraud-detection model. The same estimator is to be trained twice: once on a single worker and once across all <br>
+The xFusionCorp Industries ML platform team is conducting a parallel-training bake-off for the fraud-detection model. The same estimator is to be trained twice: once on a single worker and once across all 
 available CPUs. The MLflow Compare view will be utilized to highlight any differences in wall time. A draft script is located at /root/code/fraud-detection/src/models/train_parallel.py. <br>
 Currently, executing this script yields nearly identical wall times for both the 'serial' and 'parallel' runs, resulting in the Compare view being unable to differentiate between the two configurations.<br> 
 Your task is to modify the script to ensure that the second run executes in genuine parallel mode. Additionally, each training run must log the actual number of workers utilized, and the observed <br>
 parallelization speedup must be recorded.<br>
 
-
 1) The MLflow tracking server is already running on port 5000. The MLflow UI button at the top of the lab can be opened to confirm—the dashboard loads with an empty parallel-training experiment.<br>
-
 2) The project layout under /root/code/fraud-detection/:<br>
-    * data/train.csv – A 5000-row synthetic binary-classification dataset (imbalanced roughly 70 / 30). Larger than the 200-row dataset used earlier in the section because the n_jobs speedup is only visible once
-    there is enough work per tree.
-    * src/models/train_parallel.py – The bake-off script. Data loading, MLflow experiment setup, wall-time measurement, metrics.training_time_seconds logging, and model persistence to models/model.pkl are already wired;
-      the corrections are confined to this file.
+       * data/train.csv – A 5000-row synthetic binary-classification dataset (imbalanced roughly 70 / 30). Larger than the 200-row dataset used earlier in the section because the n_jobs speedup is only visible once
+         there is enough work per tree.
+       * src/models/train_parallel.py – The bake-off script. Data loading, MLflow experiment setup, wall-time measurement, metrics.training_time_seconds logging, and model persistence to models/model.pkl are already wired;
+         the corrections are confined to this file.
 3) Run the script once against the scaffold as-is—python src/models/train_parallel.py—and note that both runs report near-identical wall times.<br>
 4) The end state must include:<br>
     * At least two training runs exist in the parallel-training experiment, with params.n_jobs taking the values 1 and -1.
