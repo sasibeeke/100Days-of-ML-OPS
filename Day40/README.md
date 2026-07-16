@@ -244,10 +244,10 @@ After this again run <br>
 ```sh
 make train-pipeline
 ```
-The final successful run should produce:
-	* make train-pipeline exits successfully.
-	* reports/validation_status.json
-	* reports/selection.json
-	* reports/training_report.json
-	* MLflow experiment with at least 5 trial runs and metrics.f1_score.
-	* Registered model fraud-detector with a version under the staging alias only.
+The final successful run should produce:<br>
+		* make train-pipeline exits successfully.
+		* reports/validation_status.json
+		* reports/selection.json
+		* reports/training_report.json
+		* MLflow experiment with at least 5 trial runs and metrics.f1_score.
+		* Registered model fraud-detector with a version under the staging alias only.
