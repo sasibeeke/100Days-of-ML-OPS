@@ -21,7 +21,7 @@ Correct.
 validation_status is "ok" and total_trials is an integer ≥ 5.
     * The MLflow Model Registry (MLflow UI → Models) shows a fraud-detector registered model with at least one version. That version carries the staging alias and no production alias.
 Run make train-pipeline once against the scaffold as-is — the first wiring bug surfaces immediately, and each re-run reveals the next. The two # TODO blocks (the registry alias and the report assembly) do not 
-crash the pipeline; they are caught by the release checklist, so complete them before expecting a clean pass.
+crash the pipeline; they are caught by the release checklist, so complete them before expecting a clean pass.<br>
 =>  first run  it gives error <br>
 ```test
 make train-pipeline
@@ -245,9 +245,9 @@ After this again run <br>
 make train-pipeline
 ```
 The final successful run should produce:
-✅ make train-pipeline exits successfully.
-✅ reports/validation_status.json
-✅ reports/selection.json
-✅ reports/training_report.json
-✅ MLflow experiment with at least 5 trial runs and metrics.f1_score.
-✅ Registered model fraud-detector with a version under the staging alias only.
+	✅ make train-pipeline exits successfully.
+	✅ reports/validation_status.json
+	✅ reports/selection.json
+	✅ reports/training_report.json
+	✅ MLflow experiment with at least 5 trial runs and metrics.f1_score.
+	✅ Registered model fraud-detector with a version under the staging alias only.
