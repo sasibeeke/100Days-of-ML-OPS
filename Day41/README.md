@@ -135,14 +135,8 @@ def main():
     selection = {
         "run_id": best["run_id"],
         "model_type": best.get("tags.model_type", ""),
-        "metrics": {
-            "f1_score": score,
-        },
-        "params": {
-            "n_estimators": best.get("params.n_estimators"),
-            "max_depth": best.get("params.max_depth"),
-        },
-}
+        "f1_score": score,
+    }
     os.makedirs(REPORTS_DIR, exist_ok=True)
     with open(SELECTION_JSON, "w") as f:
         json.dump(selection, f, indent=2)
