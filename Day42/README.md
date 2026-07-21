@@ -15,7 +15,7 @@ under /root/code/, apply the registry, complete the pre-staged build_training_se
       writes /root/code/training_set.parquet carrying those joined feature columns (a point-in-time training set).
     * The Feast UI button at the top of the lab opens a responsive dashboard that lists the scaffold's project.
 feast ui is a long-running process; run it in a second VS Code terminal (or append & to the command) so the shell remains usable. The UI loads the registry at start-up—start the UI after feast apply has
-written registry.db.
+written registry.db.<br>
 => first go to the code of the directory <br>
 ```test
 cd /root/code
