@@ -90,7 +90,8 @@ Open the Feast UI (running on port 8888) and check:<br>
 * Feature Views:
 * customer_transaction_features
 
-Feature	        Type
-amount	        Float32
-hour	          Int64
-num_tx_past_day	Int64
+| Feature          | Type    |
+|------------------|---------|
+| amount           | Float32 |
+| hour             | Int64   |
+| num_tx_past_day  | Int64   |
